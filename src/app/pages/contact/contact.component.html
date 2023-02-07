@@ -1,0 +1,66 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt20">
+                <!-- {{ user | json }} -->
+                <mat-card>
+                <h3 class="text-center">Register here</h3>
+                <form onsubmit="sendEmail();  reset(); return false;">
+                    <!-- First Name -->
+
+                        <mat-form-field class="width" appearance="fill">
+                          <mat-label>Your Name</mat-label>
+                          <!-- Data binding -->
+                          <input 
+                          id="fname"
+                          name="fname"
+                          matInput placeholder="Enter here" required>
+                        </mat-form-field>
+
+
+                      <!-- Email -->
+
+                      <mat-form-field class="width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input 
+                        id="email"
+                        name="email"
+                        type="email" matInput placeholder="Enter here" required>
+                      </mat-form-field>
+
+                      <!-- Phone Number -->
+                      
+                      <mat-form-field class="width" appearance="fill">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                        name="phone"
+                        type="number" matInput placeholder="Enter here" required>
+                      </mat-form-field>
+
+                      <!-- subject -->
+                      <mat-form-field class="width" appearance="fill">
+                        <mat-label>Subject</mat-label>
+                        <input 
+                        id="subject"
+                        name="phone"
+                        type="text" matInput placeholder="Enter here" required>
+                      </mat-form-field>
+
+                      <!-- How can we help you -->
+                      <mat-form-field class="width" appearance="fill">
+                        <mat-label>How can we help you ?</mat-label>
+                        <textarea 
+                        id="message"
+                        name="messages"
+                         matInput placeholder="Enter here" required></textarea>
+                      </mat-form-field>
+
+                      <div class="container text-center">
+                         <button type="submit" mat-raised-button color="primary">Send</button>                     
+                     </div>
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

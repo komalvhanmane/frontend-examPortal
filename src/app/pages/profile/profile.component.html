@@ -1,0 +1,79 @@
+<mat-card>
+<div class="container">
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://www.citypng.com/public/uploads/preview/download-black-male-user-profile-icon-png-116371332534k5baafcll.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{login.getUser().username}}</h4>
+                    </div>
+                    <div class="mt-3">
+                        <h4>{{login.getUser().email}}</h4>
+                    </div>
+                    <div>
+                        <button class="mr20"mat-raised-button color="primary">Update</button>
+                        <button mat-raised-button color="accent">Share</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                          <h4 class="mb-0">User ID</h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            {{login.getUser().id}}
+                        </div>
+                      </div>
+                      <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Full Name</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{login.getUser().fname}}&nbsp;{{login.getUser().lname}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Phone</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{login.getUser().phone}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Role</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{login.getUserRole()}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Status</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{login.getStatus(login.getUser().enable)}}
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper prevent-select">
+    <div class="container-fluid">
+        <div class="col-md-2">
+            <!-- instructions -->
+        </div>
+        <div class="col-md-8">
+            <ng-container *ngIf="questions">
+                <h1 class="mt20">
+                    On Going Quiz <b>{{questions[0].quiz.title}}</b>
+                </h1>
+            </ng-container>
+            <mat-card *ngFor="let q of questions" class="mt20">
+                <mat-card-content>
+                    <p class="prevent-select" [innerHTML]="q.content"></p>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-md-6">
+                            1) <input type="radio" name="option" id="">{{q.option1}}
+                        </div>
+                        <div class="col-md-6">
+                           2) <input type="radio" name="option" id="">{{q.option2}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            3) <input type="radio" name="option" id="">{{q.option3}}
+                        </div>
+                        <div class="col-md-6">
+                            4) <input type="radio" name="option" id="">{{q.option4}}
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+<!-- Questions -->
+        </div>
+        <div class="col-md-2">
+<!-- Progress -->
+        </div>
+    </div>
+</div>

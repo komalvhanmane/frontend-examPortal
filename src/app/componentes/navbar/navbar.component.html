@@ -1,0 +1,35 @@
+
+<mat-toolbar color="primary">
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [routerLink]="'/home'">
+      <mat-icon>home</mat-icon>
+    </a>
+
+    <!--  If we use href then it refreshes every time it moves to other page so use routeerlink-->
+    <span>Exam Portal</span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!login.isloggedIn()"
+     mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [routerLink]="'/login/'">
+      <!-- <mat-icon>login</mat-icon> -->
+      Login
+    </a>
+    <a *ngIf="!login.isloggedIn()"
+     mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon" [routerLink]="'/signup/'">
+      <!-- <mat-icon>share</mat-icon> -->
+      Register
+    </a>
+    <button (click)="logout()"
+    *ngIf="login.isloggedIn()"
+     mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon" >
+      <!-- <mat-icon>share</mat-icon> -->
+      <mat-icon>logout</mat-icon>
+    </button>
+    <button
+    *ngIf="login.isloggedIn()"
+     mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon" [routerLink]="'/profile/'">
+      <!-- <mat-icon>share</mat-icon> -->
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+   
+  </mat-toolbar>
+  

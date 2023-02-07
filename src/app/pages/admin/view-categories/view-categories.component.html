@@ -1,0 +1,25 @@
+<div class="bootstrap-wrapper">
+    <mat-card>
+        <mat-list>
+            <H1 >All Categories</H1>
+            <mat-list-item *ngFor="let c of categories">
+                <mat-icon mat-list-icon>category</mat-icon>
+                <div mat-line>{{c.title}}</div>
+                <div mat-line>{{c.description}}</div>
+                <div>
+                    <form (click)="onSubmit1(c.cid)">
+                        <button type="submit"  mat-raised-button color="primary">Delete</button>
+                    </form>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+
+        <div class="container text-center mt20" routerLink="/admin/add-categories">
+            <button mat-raised-button color="primary">Add Categories</button>
+        </div>
+
+    </mat-card>
+
+
+</div>

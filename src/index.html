@@ -6,8 +6,33 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
-<body>
+<body class="mat-typography">
   <app-root></app-root>
+  <script src="https://smtpjs.com/v3/smtp.js">
+
+  </script>
+  <script>
+      function sendEmail(){
+        console.log(document.getElementById("email").value)
+          Email.send({
+              Host : "smtp.elasticemail.com",
+              Username : "vhanmanekomal120603@gmail.com",
+              Password : "944447D0C3796AC7FC3157C18DB3A8B96274",
+              To : document.getElementById("email").value,
+              From : "vhanmanekomal120603@gmail.com",
+              Subject : document.getElementById("subject").value,
+              Body :  "Name: "+document.getElementById("fname").value
+              + "<br> Email: "+document.getElementById("email").value
+              + "<br> Messege: "+document.getElementById("message").value
+          }).then(
+              message => alert(message)
+          );
+      }
+  </script>
 </body>
 </html>

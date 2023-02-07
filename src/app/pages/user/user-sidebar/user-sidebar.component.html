@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/userDash/"> 
+            <mat-icon mat-list-icon>home</mat-icon>Home
+        </button>
+        <button mat-list-item routerLink="/userDash/0">
+            <mat-icon mat-list-icon>quiz</mat-icon>All Quizzes
+        </button>
+        <button *ngFor="let c of categories" mat-list-item routerLink="/userDash/{{c.cid}}">
+            <mat-icon mat-list-icon>quiz</mat-icon>{{c.title}}
+        </button>
+
+       
+        
+    </mat-action-list>
+</mat-card>

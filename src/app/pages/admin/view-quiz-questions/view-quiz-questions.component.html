@@ -1,0 +1,49 @@
+<h2 class="mt20 "> Questions of {{title}}</h2>
+<div class="bootstrap-wrapper">
+    <div class="row prevent-select">
+        <div class="col-md-12">
+            <div class="text-center mt20">
+                <button [routerLink]="'/admin/add-questions/'+qId+'/'+title" mat-raised-button color="primary">Add Questions</button>
+            </div>
+            <mat-card *ngFor="let q of questions ; let i=index" class="mt20">
+                <!-- {{q|json}} -->
+                <mat-card-content>
+                    <p class="prevent-select">
+                       <b>Q{{i+1}}</b> <span>{{q.content}}</span>
+                    </p>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>1){{q.option1}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>2){{q.option2}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>3){{q.option3}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>4){{q.option4 }}</p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="row mt20">
+                            <div class="col-md-6">
+                                <b>
+                                    Correct Answer : {{q.answer}}
+                                </b>
+                            </div>
+                            <div class="col-md-6">
+                                <button (click)="deleteQue(q.queId)"  mat-raised-button color="warn">Delete</button>
+                                <button [routerLink]="'/admin/update-questions/'+qId+'/'+title+'/'+q.queId"  mat-raised-button color="accent" class="ml20">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
