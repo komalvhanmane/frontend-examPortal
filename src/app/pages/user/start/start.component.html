@@ -1,3 +1,4 @@
+
 <div class="bootstrap-wrapper prevent-select">
     <div class="container-fluid">
         <div class="col-md-2">
@@ -6,31 +7,31 @@
         <div class="col-md-8">
             <ng-container *ngIf="questions">
                 <h1 class="mt20">
-                    On Going Quiz <b>{{questions[0].quiz.title}}</b>
+                    <!-- On Going Quiz <b>{{question.quiz.title}}</b> -->
                 </h1>
             </ng-container>
-            <mat-card *ngFor="let q of questions" class="mt20">
-                <mat-card-content>
-                    <p class="prevent-select" [innerHTML]="q.content"></p>
-                    <mat-divider></mat-divider>
-                    <div class="row">
-                        <div class="col-md-6">
-                            1) <input type="radio" name="option" id="">{{q.option1}}
-                        </div>
-                        <div class="col-md-6">
-                           2) <input type="radio" name="option" id="">{{q.option2}}
-                        </div>
+            <div class="justify-content center">
+                <h2>MCQ Questions</h2>
+                <p>Time remaining: {{remainingTime}}</p>
+                {{questions}}
+                <form>
+                  <ng-container *ngFor="let question of questions; let i = index">
+                    <div class="question">
+                      <p>{{i+1}}){{question.content}}</p>
+                      <!-- <p>Hello</p> -->
+                      <ul>
+                        <li *ngFor="let option of question.options; let j = index">
+                          <input type="radio" id="{{i}}-{{j}}" name="{{i}}" value="{{j}}"
+                            (change)="onSelectionChange(i, j)">
+                          <label for="{{i}}-{{j}}">{{option}}</label>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            3) <input type="radio" name="option" id="">{{q.option3}}
-                        </div>
-                        <div class="col-md-6">
-                            4) <input type="radio" name="option" id="">{{q.option4}}
-                        </div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
+                  </ng-container>
+                  <button (click)="submitAnswers()">Submit</button>
+                </form>
+              </div>
+
 <!-- Questions -->
         </div>
         <div class="col-md-2">
