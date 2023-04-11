@@ -41,6 +41,9 @@ import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.com
 import { PrequizComponent } from './pages/user/prequiz/prequiz.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PostquizComponent } from './pages/user/postquiz/postquiz.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+// import {NgxUiLoaderModule } from 'ngx-ui-loader'
 
 @NgModule({
   declarations: [
@@ -68,6 +71,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     PrequizComponent,
     StartComponent,
     ContactComponent,
+    PostquizComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatTableModule,
     MatSelectModule,
     MatSlideToggleModule,
-    CKEditorModule
+    CKEditorModule,
+    MatProgressSpinnerModule,
+    // NgxUiLoaderModule,
+    // NgxUiLoaderHttpModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

@@ -38,4 +38,9 @@ export class QuestionService {
   public updateQuestion(Question:any,qid:any){
     return this.http.put(`${baseURL}/question/`,Question)
   }
+
+  //eval quiz
+  public evalquiz(Question:any){
+    return this.http.post(`${baseURL}/question/eval-quiz`,Question)
+  }
 }

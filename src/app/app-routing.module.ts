@@ -16,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.component';
+import { PostquizComponent } from './pages/user/postquiz/postquiz.component';
 import { PrequizComponent } from './pages/user/prequiz/prequiz.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-board.component';
@@ -104,13 +105,17 @@ const routes: Routes = [
         path:'instructions/:qid',
         component:PrequizComponent
       },
-      
     ]
 
   },
   {
     path:"start/:qid",
     component:StartComponent,
+    canActivate:[UserGuard]
+  },
+  {
+    path:'postQuiz',
+    component:PostquizComponent,
     canActivate:[UserGuard]
   },
   {

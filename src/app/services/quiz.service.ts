@@ -52,7 +52,5 @@ export class QuizService {
     return this.http.get(`${baseURL}/quiz/active/${cid}`)
   }
 
-  public submitAnswers(answers:any){
-    return "submitted";
-  }
+
 }
