@@ -2,23 +2,34 @@
 <div class="bootstrap-wrapper prevent-select" *ngIf="!isSubmitted">
     <div class="row container-fluid">
         <div class="col-md-2">
-            instructions
+          <mat-card style="margin-top: 120px;">
+            <mat-card-header>
+              <mat-card-title>
+                Instructions
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content >
+              <ul>
+                <li>Do not refresh the page otherwise new questions will arise</li>
+                <li>Do not switch Tabs</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
         </div>
         <div class="col-md-8">
             <ng-container *ngIf="questions">
                 <h1 class="mt20">
-                    On Going Quiz <b>{{quiz.title}}</b>
+                    <!-- On Going Quiz <b>{{quiz.title}}</b> -->
                 </h1>
             </ng-container>
             <div class="card">
                 <h2>MCQ Questions</h2>
-                {{questions}}
                 <form>
                   <ng-container *ngFor="let question of questions; let i = index">
                     <mat-card class="question mt20 mb20">
                       <p>{{i+1}}){{question.content}}</p>
                       <!-- <p>Hello</p> -->
-                      <ul>
+                      <ul style="list-style-type: none">
                         <li *ngFor="let option of question.options; let j = index">
                           <input type="radio" id="{{i}}-{{j}}" name="{{i}}" value="{{j}}"
                             (change)="onSelectionChange(i, j)">
@@ -70,9 +81,33 @@
         </mat-card-content>
         <div class="text-center">
           <button mat-raised-button color="primary" (click)="printPage()" class="mr20">print</button>
-          <button mat-raised-button color="primary" [routerLink]="'/userDash'">Home</button>
+          <button mat-raised-button color="primary" [routerLink]="'/userDash/0'">Home</button>
         </div>
       </mat-card>
+
+       <div class="card">
+        <h2>MCQ Questions with Answer</h2>
+        <form>
+          <ng-container *ngFor="let question of questions; let i = index">
+            <mat-card class="question mt20 mb20">
+              <p>{{i+1}}){{question.content}}</p>
+
+              <ol style="list-style-type:lower-roman">
+                <li *ngFor="let option of question.options; let j = index" >
+                  <label *ngIf="option==answers[i] && option==question.answer" style="color: rgb(3, 203, 0);">{{option}}</label>
+                  <label *ngIf="option==question.answer && option!=answers[i]" style="color: red;">{{option}}</label>
+                  <label *ngIf="option!=question.answer ">{{option}}</label>
+                  <!-- <br> -->
+                  <!-- <label for="">{{option+" "+question.answer}}</label> -->
+                </li>
+              </ol>
+            <b> <p>Answer = {{answers[i]}}</p> </b>
+
+            </mat-card>
+          </ng-container>
+        </form>
+      </div>
+
     </div>
   </div>
 </div>

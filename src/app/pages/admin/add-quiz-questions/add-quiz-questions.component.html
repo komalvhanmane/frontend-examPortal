@@ -6,7 +6,7 @@
             <h2>Upload Excel File</h2>
 <!-- Upload  -->
 <form id="file-upload-form" class="uploader">
-  <input id="file-upload" type="file" 
+  <input id="file-upload" type="file"
   (change)="fileUpload($event)"
   name="fileUpload"
    accept=".xls,.xlsx" />
@@ -36,20 +36,20 @@
             <h1>Add Questions to Quiz {{title}}</h1>
             <mat-card>
                 <mat-card-subtitle>
-                   Enter the details of the new question 
+                   Enter the details of the new question
                 </mat-card-subtitle>
                 <mat-card-content>
 
                     <form (ngSubmit)="onSubmit()">
                         <ckeditor [editor]="Editor"
-                         data="<p>Enter your Question Here</p>"
+                         data="Enter your Question Here"
                          name="content"
                          [(ngModel)]="questions.content">
-                        </ckeditor> 
+                        </ckeditor>
                         <!-- content field -->
                         <!-- <mat-form-field class="width" appearance="fill">
                             <mat-label>Question Content</mat-label>
-                            <textarea 
+                            <textarea
                             name="content"
                              matInput placeholder="Enter here"
                              [(ngModel)]="questions.content"
@@ -64,22 +64,22 @@
                                 <!-- option1 -->
                                 <mat-form-field class="width" appearance="fill">
                                     <mat-label>Enter option1</mat-label>
-                                    <input 
+                                    <input
                                     name="option1"
                                      matInput placeholder="Enter here"
                                      [(ngModel)]="questions.option1" type="text" required>
-                                     
+
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <!-- option2 -->
                                 <mat-form-field class="width" appearance="fill">
                                     <mat-label>Enter option2</mat-label>
-                                    <input 
+                                    <input
                                     name="option2"
                                      matInput placeholder="Enter here"
                                      [(ngModel)]="questions.option2" type="text" required>
-                                     
+
                                 </mat-form-field>
                             </div>
                         </div>
@@ -89,22 +89,22 @@
                                 <!-- option3 -->
                                 <mat-form-field class="width" appearance="fill">
                                     <mat-label>Enter option3</mat-label>
-                                    <input 
+                                    <input
                                     name="option3"
                                      matInput placeholder="Enter here"
                                      [(ngModel)]="questions.option3" type="text" required>
-                                     
+
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <!-- option4 -->
                                 <mat-form-field class="width" appearance="fill">
                                     <mat-label>Enter option4</mat-label>
-                                    <input 
+                                    <input
                                     name="option4"
                                      matInput placeholder="Enter here"
                                      [(ngModel)]="questions.option4" type="text" required>
-                                     
+
                                 </mat-form-field>
                             </div>
                         </div>

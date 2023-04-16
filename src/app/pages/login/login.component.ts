@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         //   }
         //   console.log(key)
         // }
-        // dataToken : String 
+        // dataToken : String
         Object.entries(data).forEach(
           ([key, value]) => this.login.loginUser(value)
         );
@@ -58,12 +58,12 @@ export class LoginComponent implements OnInit {
             //redirect
             if(this.login.getUserRole()=="Admin"){
               console.log("hello1")
-              this.router.navigate(['admin'])
-              
+              this.router.navigate(['admin/view-categories'])
+
               // window.location.href='/admin'
             }
             else if(this.login.getUserRole()=="Normal"){
-              this.router.navigate(['userDash'])
+              this.router.navigate(['userDash/0'])
               // window.location.href='/userDash'
             }
             else{

@@ -42,14 +42,14 @@ export class SignupComponent implements OnInit {
         // alert("Registraition succesful")
       },
       (error)=>{
-        this.snack.open("Something went error" ,'ok')
+        this.snack.open("Something went wrong" ,'ok')
 
         // alert("Something went error")
       }
     )
   }
 
-  
-  
+
+
 
 }

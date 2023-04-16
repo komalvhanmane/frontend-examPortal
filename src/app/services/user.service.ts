@@ -8,12 +8,16 @@ import baseURL from './Helper';
 export class UserService {
 
   constructor(private http: HttpClient) {
-    
+
    }
 
   //user create
   public createUser(user:any){
     console.log(user);
     return this.http.post(`${baseURL}/userr/s`,user);
+  }
+
+  public getUser(username:any){
+    return this.http.get(`${baseURL}/userr/${username}`)
   }
 }

@@ -23,6 +23,7 @@ import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-b
 import { AdminGuard } from './services/admin.guard';
 import { ProfileGuard } from './services/profile.guard';
 import { UserGuard } from './services/user.guard';
+import { ConfirmDeactivateGuard } from './services/confirm-deactivate.guard';
 
 const routes: Routes = [
 
@@ -38,10 +39,15 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path:'home',
-    component: HomeComponent,
+    path:'',
+    component: LoginComponent,
     pathMatch: 'full',
   },
+  // {
+  //   path:'**',
+  //   component: HomeComponent,
+  //   pathMatch: 'full',
+  // },
   {
     path:'admin',
     component: DashboardComponent,
@@ -94,8 +100,7 @@ const routes: Routes = [
   {
     path:'userDash',
     component: UserDashBoardComponent,
-    canActivate:[UserGuard]
-    ,
+    canActivate:[UserGuard],
     children:[
       {
         path:':categoryId',
@@ -111,7 +116,8 @@ const routes: Routes = [
   {
     path:"start/:qid",
     component:StartComponent,
-    canActivate:[UserGuard]
+    canActivate:[UserGuard],
+    canDeactivate:[ConfirmDeactivateGuard]
   },
   {
     path:'postQuiz',
