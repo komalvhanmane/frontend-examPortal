@@ -1,33 +1,35 @@
 <mat-card>
     <h1 class="text-center">Add new Category</h1>
-    
+
     <form (ngSubmit)="onSubmit()">
 
         <!-- title -->
 
         <mat-form-field class="width" appearance="fill">
             <mat-label>Title</mat-label>
-            <input 
+            <input
             name="title"
              matInput placeholder="Enter here"
              [(ngModel)]="category.title" >
-             
+
           </mat-form-field>
 
         <!-- description -->
 
           <mat-form-field class="width" appearance="fill">
             <mat-label>Description</mat-label>
-            <textarea 
+            <textarea
             name="description"
             matInput placeholder="Enter here"
             [(ngModel)]="category.description"
             rows="15" required></textarea>
           </mat-form-field>
 
-          
+
           <div class="container text-center">
-             <button type="submit" mat-raised-button color="primary">Add</button>                      
+             <button type="submit" mat-raised-button color="primary">Add</button>
           </div>
     </form>
 </mat-card>
+
+
